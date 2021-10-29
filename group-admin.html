@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/other-form.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <title>Add Research Group</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="bio-admin.html">Biography</a></li>
+            <li><a href="news-admin.html">News</a></li>
+            <li><a href="pub-admin.html">Publication</a></li>
+            <li><a href="press-admin.html">Press Release</a></li>
+            <li><a href="research-program-admin.html">Research Program</a></li>
+            <li><a href="teaching-admin.html">Teaching Courses</a></li>
+            <li><a href="group-admin.html">Group</a></li>
+            <li><a href="contact-admin.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="form-wraper">
+        <form action="group-admin.html" method="get" id="add-form">
+            <h2 class="form-heading">Add Research Group</h2>
+            <label for="fname">Faculty Name</label>
+            <select name="fname" id="fname">
+                <option disabled selected value>Select Faculty Name</option>
+                <option value="Amirali Salehi Abari">Amirali Salehi Abari</option>
+                <option value="Julie Thorpe">Julie Thorpe</option>
+                <option value="Miguel Vargas Martin">Miguel Vargas Martin</option>
+                <option value="Shahram S. Heydari">Shahram S. Heydari</option>
+            </select>
+            <label for="sname">Student Name</label>
+            <input type="text" id="sname" name="sname" placeholder="Enter Student Name">
+            <label for="year">Year</label>
+            <input type="number" id="year" name="year" placeholder="Enter Year">
+            <label for="degree">Student Degree</label>
+            <input type="text" id="degree" name="degree" placeholder="Enter Student Degree">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script>
+        $("#add-form").validate({
+            rules:{
+                fname:"required",
+                sname:{
+                    required: 1,
+                    minlength: 3
+                },
+                year:"required",
+                degree:"required",
+            },
+            messages:{
+                fname:{
+                    required: "Faculty name is required",
+                },
+                sname:{
+                    required: "Student name is required",
+                    minlength: "Student name must have at least 3 character"
+                },
+                year:{
+                    required: "Year is required",
+                },
+                degree:{
+                    required: "Student degree is required",
+                },
+            }
+        })
+    </script>
+</body>
+</html>

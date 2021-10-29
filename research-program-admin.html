@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/other-form.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <title>Edit/Add Research Project</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="bio-admin.html">Biography</a></li>
+            <li><a href="news-admin.html">News</a></li>
+            <li><a href="pub-admin.html">Publication</a></li>
+            <li><a href="press-admin.html">Press Release</a></li>
+            <li><a href="research-program-admin.html">Research Program</a></li>
+            <li><a href="teaching-admin.html">Teaching Courses</a></li>
+            <li><a href="group-admin.html">Group</a></li>
+            <li><a href="contact-admin.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="form-wraper">
+        <form action="research-program-admin.html" method="get" id="search-form">
+            <label for="facultyname">Search Faculty to Edit Record</label>
+            <input type="text" id="facultyname" name="facultyname" placeholder="Enter Faculty Name">
+            <input type="submit" value="Search">
+        </form>
+        <form action="research-program-admin.html" method="get" id="add-form">
+            <h2 class="form-heading">Add Research Program</h2>
+            <label for="name">Name</label>
+            <select name="name" id="name">
+                <option disabled selected value>Select Faculty Name</option>
+                <option value="Amirali Salehi Abari">Amirali Salehi Abari</option>
+                <option value="Julie Thorpe">Julie Thorpe</option>
+                <option value="Miguel Vargas Martin">Miguel Vargas Martin</option>
+                <option value="Shahram S. Heydari">Shahram S. Heydari</option>
+            </select>
+            <label for="researchProject">Research Project</label>
+            <input type="text" id="researchProject" name="researchProject" placeholder="Enter Research Project">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script>
+        $("#search-form").validate({
+            rules:{
+                facultyname:"required"
+            }, messages:{
+                facultyname:{
+                    required:"Faculty name required to search"
+                }
+            }
+        })
+        $("#add-form").validate({
+            rules:{
+                name:"required",
+                researchProject:"required",
+            },
+            messages:{
+                name:{
+                    required: "Name is required",
+                },
+                researchProject:{
+                    required:"Research project is required"
+                },
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+.faculty-research-member, .teaching-member, .group-member{
+    padding-bottom: 6em;
+}
+.faculty-image{
+    display: inline-block;
+    max-width: 250px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-right: 1em;
+    aspect-ratio: 1;
+}
+.faculty-image img{
+    width: 100%;
+}
+.faculty-info{
+    margin-top: 2em;
+    max-width: 350px;
+    display: inline-block;
+    vertical-align: top;
+    color: var(--primary);
+}
+.faculty-prof-name{
+    font-weight: 600;
+    font-size: 2em;
+    letter-spacing: .1em;
+    color: var(--accent-1);
+    line-height: 1em;
+}
+.faculty-qualification{
+    font-size: 1em;
+    font-weight: 500;
+}
+.faculty-Position{
+    margin-top: 1em;
+    font-weight: 600;
+}
+.faculty-teacher{
+    font-size: 1em;
+}
+.faculty-name{
+    font-size: 1em;
+    margin-top: .7em;
+    font-weight: 600;
+}
+.bottom-container{
+    color: var(--primary);
+}
+.bottom-container h2{
+    margin-top: 1.5em;
+}
+.bottom-container h2{
+    color: var(--accent-1);
+    letter-spacing: .1em;
+    margin-bottom: .5em;
+}
+.bottom-container ::marker{
+    color: var(--primary);
+}
+

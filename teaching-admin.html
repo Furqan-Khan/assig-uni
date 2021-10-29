@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/other-form.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <title>Add Courses</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="bio-admin.html">Biography</a></li>
+            <li><a href="news-admin.html">News</a></li>
+            <li><a href="pub-admin.html">Publication</a></li>
+            <li><a href="press-admin.html">Press Release</a></li>
+            <li><a href="research-program-admin.html">Research Program</a></li>
+            <li><a href="teaching-admin.html">Teaching Courses</a></li>
+            <li><a href="group-admin.html">Group</a></li>
+            <li><a href="contact-admin.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="form-wraper">
+        <form action="teaching-admin.html" method="get" id="add-form">
+            <h2 class="form-heading">Add Courses</h2>
+            <label for="fname">Faculty Name</label>
+            <select name="fname" id="fname">
+                <option disabled selected value>Select Faculty Name</option>
+                <option value="Amirali Salehi Abari">Amirali Salehi Abari</option>
+                <option value="Julie Thorpe">Julie Thorpe</option>
+                <option value="Miguel Vargas Martin">Miguel Vargas Martin</option>
+                <option value="Shahram S. Heydari">Shahram S. Heydari</option>
+            </select>
+            <label for="cname">Cource Name</label>
+            <input type="text" id="cname" name="cname" placeholder="Enter Cource Name">
+            <label for="code">Cource Code</label>
+            <input type="text" id="code" name="code" placeholder="Enter Cource Code">
+            <label for="year">Year</label>
+            <input type="number" id="year" name="year" placeholder="Enter Year">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script>
+        $("#add-form").validate({
+            rules:{
+                fname:"required",
+                cname:"required",
+                code:"required",
+                year:"required",
+            },
+            messages:{
+                fname:{
+                    required: "Faculty name is required",
+                },
+                cname:{
+                    required: "Cource name is required",
+                },
+                code:{
+                    required: "Cource code is required",
+                },
+                year:{
+                    required: "Year is required",
+                },
+            }
+        })
+    </script>
+</body>
+</html>

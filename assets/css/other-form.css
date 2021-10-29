@@ -1,0 +1,12 @@
+form{
+    max-width: 600px;
+}
+input:not([type="submit"]), textarea, select{
+    width: 100%;
+}
+textarea{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 140px;
+
+}

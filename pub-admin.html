@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/other-form.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <title>Add Publication</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="bio-admin.html">Biography</a></li>
+            <li><a href="news-admin.html">News</a></li>
+            <li><a href="pub-admin.html">Publication</a></li>
+            <li><a href="press-admin.html">Press Release</a></li>
+            <li><a href="research-program-admin.html">Research Program</a></li>
+            <li><a href="teaching-admin.html">Teaching Courses</a></li>
+            <li><a href="group-admin.html">Group</a></li>
+            <li><a href="contact-admin.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="form-wraper">
+        <form action="pub-admin.html" method="get" id="pub-form">
+            <h2 class="form-heading">Add Publication</h2>
+            <label for="authers-names">Auther's Names</label>
+            <input type="text" id="authers-names" name="authersNames" placeholder="Enter Auther's Names">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter Title">
+            <label for="type">Type</label>
+            <select name="type" id="type">
+                <option disabled selected value>Select Type</option>
+                <option value="journals">Journals</option>
+                <option value="conference papers">Conference Papers</option>
+                <option value="workshop papers">Workshop Papers</option>
+                <option value="posters">Posters</option>
+                <option value="technical reports">Technical Reports</option>
+            </select>
+            <label for="file">Publication (Pdf file)</label>
+            <input type="file" id="file" name="file">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+    <script>
+        $("#pub-form").validate({
+            rules:{
+                authersNames:{
+                    required: 1,
+                    minlength: 3
+                },
+                title:"required",
+                type:"required",
+                file:"required",
+            },
+            messages:{
+                authersNames:{
+                    required: "Auther's names is required",
+                    minlength: "Auther's names much have at least 3 characters."
+                },
+                title:{
+                    required: "Title is required",
+                },
+                type:{
+                    required: "Type is required",
+                },
+                file:{
+                    required:"Pdf is required"
+                },
+            }
+        })
+    </script>
+</body>
+</html>

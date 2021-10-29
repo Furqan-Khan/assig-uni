@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/other-form.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <title>Edit Faculty Biography</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="bio-admin.html">Biography</a></li>
+            <li><a href="news-admin.html">News</a></li>
+            <li><a href="pub-admin.html">Publication</a></li>
+            <li><a href="press-admin.html">Press Release</a></li>
+            <li><a href="research-program-admin.html">Research Program</a></li>
+            <li><a href="teaching-admin.html">Teaching Courses</a></li>
+            <li><a href="group-admin.html">Group</a></li>
+            <li><a href="contact-admin.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="form-wraper">
+        <form action="boi-admin.html" method="get" id="search-form">
+            <label for="facultyName">Search Faculty to Edit Record</label>
+            <input type="text" id="facultyName" name="facultyName" placeholder="Enter Faculty Name">
+            <input type="submit" value="Search">
+        </form>
+        <form action="boi-admin.html" method="get" id="update-form">
+            <h2 class="form-heading">Update Biography</h2>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name">
+            <label for="eduction">Eduction</label>
+            <input type="text" id="eduction" name="eduction" placeholder="Enter Eduction">
+            <label for="position">Position</label>
+            <input list="position-list" name="position" id="position" placeholder="Enter Position">
+            <datalist id="position-list">
+                <option value="Professor">Professor</option>
+                <option value="Associate Professor">Associate Professor</option>
+                <option value="Assistant Professor">Assistant Professor</option>
+                <option value="Lecturer">Lecturer</option>
+                <option value="Academic Associate">Academic Associate</option>
+            </datalist>
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" placeholder="Enter Department">
+            <label for="image">Image</label>
+            <input type="file" id="image" name="image">
+            <label for="bio">Biography</label>
+            <textarea name="bio" id="bio" placeholder="Enter Biography"></textarea>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+    <script>
+        $("#search-form").validate({
+            rules:{
+                facultyName:"required"
+            }, messages:{
+                facultyName:{
+                    required:"Faculty name required to search"
+                }
+            }
+        })
+        $("#update-form").validate({
+            rules:{
+                name:{
+                    required: 1,
+                    minlength: 3
+                },
+                eduction:"required",
+                position:"required",
+                department:"required",
+                image:"required",
+                bio:"required"
+            },
+            messages:{
+                name:{
+                    required: "Name is required",
+                    minlength: "Name much have at least 3 characters."
+                },
+                eduction:{
+                    required: "Eduction is required",
+                },
+                position:{
+                    required: "Position is required",
+                },
+                department:{
+                    required: "Department is required",
+                },
+                image:{
+                    required:"Image is required"
+                },
+                bio:{
+                    required: "Biography is required",
+                }
+            }
+        })
+    </script>
+</body>
+</html>

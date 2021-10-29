@@ -1,0 +1,6 @@
+form{
+    max-width: 380px;
+}
+input:not([type="submit"]){
+    width: 100%;
+}

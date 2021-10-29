@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/other-form.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <title>Edit Contact</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="bio-admin.html">Biography</a></li>
+            <li><a href="news-admin.html">News</a></li>
+            <li><a href="pub-admin.html">Publication</a></li>
+            <li><a href="press-admin.html">Press Release</a></li>
+            <li><a href="research-program-admin.html">Research Program</a></li>
+            <li><a href="teaching-admin.html">Teaching Courses</a></li>
+            <li><a href="group-admin.html">Group</a></li>
+            <li><a href="contact-admin.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="form-wraper">
+        <form action="contact-admin.html" method="get" id="edit-form">
+            <h2 class="form-heading">Edit Contact Info</h2>
+            <label for="mail">Mailing Address</label>
+            <input type="text" id="mail" name="mail" placeholder="Enter Mailing Address">
+            <label for="hours">Hours of Operation</label>
+            <input type="text" id="hours" name="hours" placeholder="Enter Hours of Operation">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email Address">
+            <label for="no">Phone Number</label>
+            <input type="text" id="no" name="no" placeholder="Enter Phone Number">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+    <script>
+        $("#edit-form").validate({
+            rules:{
+                mail: "required",
+                hours:"required",
+                email:{
+                    required: 1,
+                    email: true,
+                    pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$'
+                },
+                no: "required"
+            },
+            messages:{
+                mail:{
+                    required: "Mailind address is required",
+                },
+                hours:{
+                    required: "Hours of operation is required",
+                },
+                email:{
+                    required: "Email address is required",
+                },
+                no:{
+                    required: "Phone number is required",
+                }
+            }
+        })
+    </script>
+</body>
+</html>

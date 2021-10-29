@@ -1,0 +1,24 @@
+.press-release-title{
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--primary);
+    width: 100%;
+}
+.press-release-date{
+    font-weight: 300;
+    color: var(--secondary);
+    margin: 5px 0 20px;
+}
+.press-release-image img{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.press-release-discription{
+    margin-top: 40px;
+}
+.press-release-discription p{
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: var(--primary);
+    font-weight: 300;
+}

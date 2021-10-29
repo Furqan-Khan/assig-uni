@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/admin-login.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <title>Admin login</title>
+</head>
+<body>
+    <div class="form-wraper admin-page">
+        <form method="post" action="admin.html" id="form">
+            <h2 class="form-heading">login</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username" autofocus autocomplete="off">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password">
+            <input type="submit" name="submit" value="Login">
+        </form>
+    </div>
+    <script>
+        $("#form").validate({
+            rules: {
+                username: "required",
+                password: "required"
+            },
+            messages: {
+                username:{
+                    required: "Username is requied"
+                },
+                password: {
+                    required: "Password is required"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

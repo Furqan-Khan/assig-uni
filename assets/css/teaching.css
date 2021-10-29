@@ -1,0 +1,8 @@
+.teaching-member .bottom-container ul li{
+    font-weight: bold;
+}
+.teaching-member .bottom-container ul li ul li{
+    font-size: .9em;
+    font-weight: 300;
+    margin-left: 1.5em;
+}
